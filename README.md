@@ -122,10 +122,10 @@ Permite adăugarea rapidă de locații noi pentru organizarea concertelor, actua
 **Flux de lucru simplificat**:
 - Utilizatorul accesează endpoint-ul PUT /locations/{id}, unde {id} reprezintă ID-ul locației care se dorește a fi editată.
   
-  Pentru a demonstra acest lucru, prima dată vom afișa detaliile aflate deja în baza de date pentru locația cu ID-ul
+  Pentru a demonstra acest lucru, prima dată vom afișa detaliile aflate deja în baza de date pentru locația cu ID-ul 7.
   
 ![image](https://github.com/user-attachments/assets/35b9fcec-2a25-478a-92ff-1b2bec1b4066)
- În continuare, folosim endpointul PUT /locations/7 pentru a introduce datele corecte pentru locația cu ID-ul 4.
+ În continuare, folosim endpointul PUT /locations/7 pentru a introduce datele corecte pentru locația cu acest ID.
 - Serverul preia informațiile din request, actualizează locația corespunzătoare în baza de date și returnează locația actualizată
   
 ![image](https://github.com/user-attachments/assets/358cd973-c240-4c08-b00d-35dc1e03b174)
