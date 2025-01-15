@@ -1,4 +1,4 @@
-# Concert Management :guitar:
+![image](https://github.com/user-attachments/assets/40ea07f6-c83d-4f58-b13f-e786f442c7e6)# Concert Management :guitar:
 
 **Concert Management** este o aplicație Spring Boot care permite gestionarea concertelor, artiștilor, locațiilor, genurilor muzicale și biletelor.
 
@@ -53,10 +53,10 @@ Dintre cele 10 idei, am selectat **5 funcționalități de bază** pentru MVP (M
 **Scopul oferit**:
 - Această funcționalitate permite oricui să vadă ce concerte sunt în desfășurare sau urmează.
 - Acesta reprezintă un punct de pornire pentru ca un user să decidă la ce concert dorește să participe și prin urmare, să cumpere bilete. !!!
-**Flux de lucru simplificat***:
+**Flux de lucru simplificat***
   - Utilizatorul accesează endpoint-ul GET /concerts
     
-![image](https://github.com/user-attachments/assets/2f90391b-64e0-4708-86de-4c307278fac3)â
+![image](https://github.com/user-attachments/assets/2f90391b-64e0-4708-86de-4c307278fac3)
 
   - Serverul returnează un array/o listă cu obiecte ConcertDTO ce conțin informații despre fiecare concert
     
@@ -159,4 +159,19 @@ Aplicația include o documentație a endpoint-urilor REST, disponibilă prin Swa
 
 ![image](https://github.com/user-attachments/assets/f120420b-ce46-4f3a-aa1d-a83f93b24db1)
 
+## Validări
+S-au folosit adnotări precum @NotBlank, @NotNull, @Size, @Min pentru a valida datele de intrare
+### Exemplu de validare la o clasă de tip model: Artist
+![image](https://github.com/user-attachments/assets/437fbcf0-1733-4752-9051-da6a12e0780d)
+- @NotBlank interzice ca numele artistului să fie null sau un string gol.
+- @Size(max = 100) asigură că lungimea numelui nu depășește 100 de caractere.
+- @NotNull interzice stocarea valorilor nulle.
 
+### Exemplu de validare la nivel de DTO: TicketDTO
+![image](https://github.com/user-attachments/assets/fe953602-efe1-4471-9441-cbf30e34dc6e)
+- concertId și userId trebuie să fie neapărat diferite de null, altfel va apărea o eroare de validare.
+- @Min(0) forțează prețul biletului să fie >= 0, astfel nu se pot vinde bilete cu un preț negativ.
+
+### Exemplu de validare în Service: ConcertService
+![image](https://github.com/user-attachments/assets/2fffd461-1037-430e-883d-2794d421029a)
+- Se verifică dacă capacityAvailable este între 0 și valoarea maximă capacity. Dacă valoare nu respectă intervalul, metoda aruncă o excepție
