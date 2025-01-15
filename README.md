@@ -46,7 +46,7 @@ Acest proiect urmărește să ofere un sistem administrare a unui **catalog de c
 
 ## Funcționalități principale (MVP)
 
-Dintre cele 10 idei, am selectat **5 funcționalități de bază** pentru MVP (Minimum Viable Product):
+Dintre cele 10 idei, am selectat **5 funcționalități de bază** pentru MVP (Minimum Viable Product). Aceste funcționalități le voi demonstra cu ajutorul programului Postman.
 
 ### 1. Afișarea concertelor
 **Descriere**: 
@@ -56,24 +56,51 @@ Dintre cele 10 idei, am selectat **5 funcționalități de bază** pentru MVP (M
 - Acesta reprezintă un punct de pornire pentru ca un user să decidă la ce concert dorește să participe și prin urmare, să cumpere bilete. !!!
 **Flux de lucru simplificat***:
   - Utilizatorul accesează endpoint-ul GET /concerts
-  - Serverul returnează un array/o listă cu obiecte ConcertDTO ce conțin informații despre fiecare concert.
-În continuare voi prezenta cum arată acest proces în Postman.
-După compilarea programului și asigurarea că nu e există erori, introducem în Postman un request de tip GET către adresa:
-
 ![image](https://github.com/user-attachments/assets/2f90391b-64e0-4708-86de-4c307278fac3)
-
-Se apasă SEND, iar dacă totul este configurat corect va apărea un răspuns de tip 200 OK și un array de obiecte JSON care reprezintă lista de concerte aflată în baza de date.
-
+  - Serverul returnează un array/o listă cu obiecte ConcertDTO ce conțin informații despre fiecare concert
 ![image](https://github.com/user-attachments/assets/f3b84ac9-317f-43c8-bade-55f23731e5f5)
 
 ![image](https://github.com/user-attachments/assets/549d7ce4-fec7-4cab-a19c-d46250206b65)
 
-![image](https://github.com/user-attachments/assets/0b6c2073-2b7e-420f-944b-587ff6d074da)
+![image](https://github.com/user-attachments/assets/0b6c2073-2b7e-420f-944b-587ff6d074da) 
 
 ### 2. Ștergerea unei descrieri asociate concertului
+**Descriere**: 
+- Utilizatorul poate șterge o descriere asociată unui concert specific, folosind endpointul său. Aceasta permite eliminarea informațiilor dorite despre un concert
+**Scopul oferit**:
+- Ajută la menținerea bazei de date curate și la actualizarea informațiilor, eliminând descrierile nevalide sau care nu sunt necesare.
+**Flux de lucur simplificat**:
+- Utilizatorul accesează endpoint-ul DELETE /concert-descriptions/{id}
+În acest caz, vom șterge descriere care face legătură cu concertul care are ID-ul 1 !!!!!!!!!!!!!!!!!!
+![image](https://github.com/user-attachments/assets/b91ae7b6-fba4-4bc7-a6a8-21f5a7ae42d3)
+- Serverul identifică descrierea cu ID-ul specificat și o șterge.
+![image](https://github.com/user-attachments/assets/a73b2fb1-9fc9-4c3e-92fe-83accdc00907)
+- Dacă descrierea nu există, serverul returnează un mesaj de eroare
+![image](https://github.com/user-attachments/assets/3f6dce1d-d841-4db5-a32e-37ec8c6ea04a)
 
+### 3. Crearea unei locații
+**Descriere**:
+- Utilizatorul poate adăuga o locație nouă în baza de date, oferind informații precum numele locației, adresa și capacitatea totală.
+**Scopul oferit**:
+Permite adăugarea rapidă de locații noi pentru organizarea concertelor, actualizând datele aplicației în funcție de nevoi.
+**Flux de lucru simplificat**:
+- Utilizatorul accesează endpoint-ul POST /locations.
+![image](https://github.com/user-attachments/assets/8168978a-35fb-43cc-bf82-501d0cff9338)
+- Serverul primește și validează corpul cererii JSON pentru a crea locația.
+- Dacă cererea este validă, locația este creată și se returnează un răspuns 201 Created.
+ ![image](https://github.com/user-attachments/assets/e7c4e497-70fc-4bd0-b412-9866024c8af9)
 
-
+### 4. Crearea unui artist nou
+**Descriere:**
+- Utilizatorul poate adăuga un artist nou în baza de date, specificând numele acestuia și genurile muzicale asociate.
+**Scopul oferit**:
+- Facilitează extinderea catalogului de artiști disponibili pentru concerte.
+**Flux de lucru simplificat**:
+- Utilizatorul accesează endpoint-ul POST /artists.
+![image](https://github.com/user-attachments/assets/e9ef9095-83a8-4b4c-b966-187d40c77cd1)
+- Serverul primește și validează corpul cererii JSON.
+- Artistul este creat și răspunsul include informațiile despre artistul adăugat.
+![image](https://github.com/user-attachments/assets/f43bc927-1b02-44b9-8a6a-4a4cf48933d1)
 
 
 
