@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/40ea07f6-c83d-4f58-b13f-e786f442c7e6)# Concert Management :guitar:
+# Concert Management :guitar:
 
 **Concert Management** este o aplicație Spring Boot care permite gestionarea concertelor, artiștilor, locațiilor, genurilor muzicale și biletelor.
 
@@ -175,3 +175,26 @@ S-au folosit adnotări precum @NotBlank, @NotNull, @Size, @Min pentru a valida d
 ### Exemplu de validare în Service: ConcertService
 ![image](https://github.com/user-attachments/assets/2fffd461-1037-430e-883d-2794d421029a)
 - Se verifică dacă capacityAvailable este între 0 și valoarea maximă capacity. Dacă valoare nu respectă intervalul, metoda aruncă o excepție
+
+## Teste unitare pentru GenreController și GenreService
+Această secțiune ilustrează testarea endpointurilor REST din cadrul clasei GenreController, precum și validarea logicii de business din GenreService. În continuare voi prezenta două clase de test pentru fiecare în parte.
+
+**Testarea GenreController**
+1. Obținerea tuturor genurilor muzicale
+![image](https://github.com/user-attachments/assets/8e8f9572-c075-40f3-9a7c-cc2d383b2764)
+Metoda de test "getAllGenres_ReturnsListOfGenres" valideaza că endpointul /genres returnează o lista de genuri. Această metodă folosește MockMvc pentru simularea apelului REST și verificare răspunsului.
+
+2. Crearea unui gen muzical
+![image](https://github.com/user-attachments/assets/23de257e-d22c-4f39-89bb-debdb55cc7b9)
+Metoda de test createGenre_WithValidData_ReturnsCreatedGenre simulează un request POST la /genres și verifică dacă genul este creat cu succes. Ea asigură validarea datelor prin MockMvc.
+
+**Testarea GenreService**
+1. Crearea unui gen muzical
+![image](https://github.com/user-attachments/assets/94e97845-6f44-45e2-baf2-78ee790a46a9)
+Metoda de test createGenre_withValidGenreDTO_savesGenreSuccessfully testează scenariul în care un gen muzical nou este salvat cu succes.
+
+2. Obținerea unui gen muzical existent
+![image](https://github.com/user-attachments/assets/f6c73a65-7474-453e-9f2f-57dd7a910178)
+Metoda de test getGenreById_withExistingId_returnsGenreDTO testează dacă metoda getGenreById returnează corect când genul muzical există deja.
+
+
