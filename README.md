@@ -52,9 +52,8 @@ Dintre cele 10 idei, am selectat **5 funcționalități de bază** pentru MVP (M
 - Utilizatorul poate vizualizarea toate concertele aflate în baza de date. Pentru fiecare concert se afișează detalii precum: numele concertului, data și ora, locația în care se află, capacitatea totală și locuri disponibile. Totodată, un concert poate oferi și informații precum: artiștii care vor cânta la acel concert, detaliile biletelor vândute și informații generale despre concert.
 **Scopul oferit**:
 - Această funcționalitate permite oricui să vadă ce concerte sunt în desfășurare sau urmează.
-- Acesta reprezintă un punct de pornire pentru ca un user să decidă la ce concert dorește să participe și prin urmare, să cumpere bilete. !!!
-**Flux de lucru simplificat***
-  - Utilizatorul accesează endpoint-ul GET /concerts
+- Acesta reprezintă un punct de pornire un user să decidă la ce concert dorește să participe și prin urmare, să cumpere biletul respectiv. 
+- Utilizatorul accesează endpoint-ul GET /concerts
     
 ![image](https://github.com/user-attachments/assets/2f90391b-64e0-4708-86de-4c307278fac3)
 
@@ -71,9 +70,9 @@ Dintre cele 10 idei, am selectat **5 funcționalități de bază** pentru MVP (M
 - Utilizatorul poate șterge o descriere asociată unui concert specific, folosind endpointul său. Aceasta permite eliminarea informațiilor dorite despre un concert
 **Scopul oferit**:
 - Ajută la menținerea bazei de date curate și la actualizarea informațiilor, eliminând descrierile nevalide sau care nu sunt necesare.
-**Flux de lucur simplificat**:
+**Flux de lucru simplificat**:
 - Utilizatorul accesează endpoint-ul DELETE /concert-descriptions/{id}
-În acest caz, vom șterge descriere care face legătură cu concertul care are ID-ul 1 !!!!!!!!!!!!!!!!!!
+În acest caz, vom șterge descrierea aferentă concertului cu ID-ul 1.
 
 ![image](https://github.com/user-attachments/assets/b91ae7b6-fba4-4bc7-a6a8-21f5a7ae42d3)
 
@@ -123,7 +122,7 @@ Permite adăugarea rapidă de locații noi pentru organizarea concertelor, actua
 **Flux de lucru simplificat**:
 - Utilizatorul accesează endpoint-ul PUT /locations/{id}, unde {id} reprezintă ID-ul locației care se dorește a fi editată.
   
-  Pentru a demonstra acest lucru, prima data vom afișa detaliile aflate deja în baza de date pentru locația cu ID-ul
+  Pentru a demonstra acest lucru, prima dată vom afișa detaliile aflate deja în baza de date pentru locația cu ID-ul
   
 ![image](https://github.com/user-attachments/assets/35b9fcec-2a25-478a-92ff-1b2bec1b4066)
  În continuare, folosim endpointul PUT /locations/7 pentru a introduce datele corecte pentru locația cu ID-ul 4.
@@ -144,7 +143,7 @@ Aplicația conține 8 tabele. Acestea sunt:
 - Ticket
 - User
   
-Relțiile existente sunt:
+Relațiile existente sunt:
 - One to One: exemplu Concert - ConcertDescription
 - One to Many: exemplu Concert - Ticket
 - Many to One: exemplu Concert - Location
@@ -188,6 +187,9 @@ Metoda de test "getAllGenres_ReturnsListOfGenres" valideaza că endpointul /genr
 ![image](https://github.com/user-attachments/assets/23de257e-d22c-4f39-89bb-debdb55cc7b9)
 Metoda de test createGenre_WithValidData_ReturnsCreatedGenre simulează un request POST la /genres și verifică dacă genul este creat cu succes. Ea asigură validarea datelor prin MockMvc.
 
+Testele din GenreControllerTest trec cu succes :white_check_mark:
+![image](https://github.com/user-attachments/assets/8486c14f-74b7-48ba-9586-1beaf1e764da)
+
 **Testarea GenreService**
 1. Crearea unui gen muzical
 ![image](https://github.com/user-attachments/assets/94e97845-6f44-45e2-baf2-78ee790a46a9)
@@ -196,5 +198,9 @@ Metoda de test createGenre_withValidGenreDTO_savesGenreSuccessfully testează sc
 2. Obținerea unui gen muzical existent
 ![image](https://github.com/user-attachments/assets/f6c73a65-7474-453e-9f2f-57dd7a910178)
 Metoda de test getGenreById_withExistingId_returnsGenreDTO testează dacă metoda getGenreById returnează corect când genul muzical există deja.
+
+Testele din GenreServiceTest trec cu succes :white_check_mark:
+![image](https://github.com/user-attachments/assets/7c03a30d-b32a-4c39-9f3d-fab7f7a1ff5e)
+
 
 
