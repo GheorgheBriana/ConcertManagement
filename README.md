@@ -152,4 +152,11 @@ Relțiile existente sunt:
 
 ![image](https://github.com/user-attachments/assets/f914cb84-ae49-4423-a083-3a648e1ed8f8)
 
+### Documentație API prin Swagger UI
+Aplicația include o documentație a endpoint-urilor REST, disponibilă prin Swagger UI.
+
+![image](https://github.com/user-attachments/assets/2de45c39-39ee-4566-8e3f-d01043e06922)
+
+![image](https://github.com/user-attachments/assets/f120420b-ce46-4f3a-aa1d-a83f93b24db1)
+
 
