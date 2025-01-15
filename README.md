@@ -13,11 +13,11 @@ Acest proiect urmărește să ofere un sistem administrare a unui **catalog de c
 ## Tehnologii și biblioteci :woman_technologist:
 
 - **Java**
-- **Spring Boot** (REST, Data JPA)
-- **Hibernate** + **MySQL** (pentru persistarea datelor)
-- **Maven** (sau Gradle) pentru build și dependency management
-- **Swagger/OpenAPI** (pentru documentarea endpoint-urilor)
-- **JUnit + Mockito** (pentru testare)
+- **Spring Boot**
+- **Hibernate** + **MySQL** 
+- **Maven** 
+- **Swagger/OpenAPI** 
+- **JUnit + Mockito** 
 
 ## Idei de business (10)
 
