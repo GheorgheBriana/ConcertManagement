@@ -188,7 +188,8 @@ Metoda de test "getAllGenres_ReturnsListOfGenres" valideaza că endpointul /genr
 Metoda de test createGenre_WithValidData_ReturnsCreatedGenre simulează un request POST la /genres și verifică dacă genul este creat cu succes. Ea asigură validarea datelor prin MockMvc.
 
 Testele din GenreControllerTest trec cu succes :white_check_mark:
-![image](https://github.com/user-attachments/assets/8486c14f-74b7-48ba-9586-1beaf1e764da)
+![image](https://github.com/user-attachments/assets/2f2f066c-4efb-4362-91f0-dcefdabc8b72)
+
 
 **Testarea GenreService**
 1. Crearea unui gen muzical
@@ -200,7 +201,8 @@ Metoda de test createGenre_withValidGenreDTO_savesGenreSuccessfully testează sc
 Metoda de test getGenreById_withExistingId_returnsGenreDTO testează dacă metoda getGenreById returnează corect când genul muzical există deja.
 
 Testele din GenreServiceTest trec cu succes :white_check_mark:
-![image](https://github.com/user-attachments/assets/7c03a30d-b32a-4c39-9f3d-fab7f7a1ff5e)
+![image](https://github.com/user-attachments/assets/1172b142-b319-47c7-ad63-fb1918cf2e57)
+
 
 
 
