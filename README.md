@@ -1,5 +1,4 @@
-z
- # Concert Management :guitar:
+# Concert Management :guitar:
 
 **Concert Management** este o aplicație Spring Boot care permite gestionarea concertelor, artiștilor, locațiilor, genurilor muzicale și biletelor.
 
@@ -131,5 +130,26 @@ Permite adăugarea rapidă de locații noi pentru organizarea concertelor, actua
 - Serverul preia informațiile din request, actualizează locația corespunzătoare în baza de date și returnează locația actualizată
   
 ![image](https://github.com/user-attachments/assets/358cd973-c240-4c08-b00d-35dc1e03b174)
+
+### Baza de date al aplicației Concert Management
+
+Aplicația conține 8 tabele. Acestea sunt:
+- Concert
+- Artist
+- Concert_Artist
+- ConcertDescription
+- Genre
+- Artist_Genre
+- Location
+- Ticket
+- User
+  
+Relțiile existente sunt:
+- One to One: exemplu Concert - ConcertDescription
+- One to Many: exemplu Concert - Ticket
+- Many to One: exemplu Concert - Location
+- Many to Many: exemplu Artist - Genre care are tabelul de legătură Artist_Genre
+
+![image](https://github.com/user-attachments/assets/f914cb84-ae49-4423-a083-3a648e1ed8f8)
 
 
