@@ -12,7 +12,7 @@ Acest proiect urmărește să ofere un sistem administrare a unui **catalog de c
 
 ## Tehnologii și biblioteci :woman_technologist:
 
-- **Java 17 (sau 11+)**
+- **Java**
 - **Spring Boot** (REST, Data JPA)
 - **Hibernate** + **MySQL** (pentru persistarea datelor)
 - **Maven** (sau Gradle) pentru build și dependency management
